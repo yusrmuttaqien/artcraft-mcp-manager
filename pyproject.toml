@@ -1,0 +1,16 @@
+[project]
+name = "acmcp"
+version = "0.1.0"
+description = "Install and manage MCP companion binaries of the ArtCraft Craft App suite"
+requires-python = ">=3.9"
+dependencies = ["textual>=1.0"]
+
+[project.scripts]
+acmcp = "acmcp.tui:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["acmcp*"]
