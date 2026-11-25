@@ -16,11 +16,15 @@ The entry point is a terminal UI.
 ## Setup
 
 ```sh
-cd ~/Developer/acmcp
-uv venv && uv pip install -e .        # or: python3 -m venv .venv && .venv/bin/pip install -e .
+git clone https://github.com/yusrmuttaqien/artcraft-mcp-manager
+cd artcraft-mcp-manager
+uv sync                                # builds .venv from uv.lock, installs acmcp editable
 source .venv/bin/activate
 acmcp
 ```
+
+`uv.lock` pins the exact tested dependency versions. Without it, `uv pip install -e .`
+resolves current releases instead.
 
 First run: press `c` to build the catalog (GitHub API calls, about 15 seconds), then
 `i` on any row installs that companion. You can press `i` on several rows one after
